@@ -1,2 +1,2 @@
-# bookteria
-The bookteria project, a book social network
+# fsn
+The fsn project, a football social network
