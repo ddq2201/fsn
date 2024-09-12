@@ -1,6 +1,5 @@
 package com.devteria.identity.entity;
 
-import java.time.LocalDate;
 import java.util.Set;
 
 import jakarta.persistence.*;
