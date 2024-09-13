@@ -2,6 +2,8 @@ package com.devteria.notification.service;
 
 import java.util.List;
 
+import lombok.experimental.NonFinal;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.devteria.notification.dto.request.EmailRequest;
@@ -23,7 +25,11 @@ import lombok.experimental.FieldDefaults;
 public class EmailService {
     EmailClient emailClient;
 
-    String apiKey = "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";
+    @Value("${notification.email.brevo-apikey}")
+    @NonFinal
+    String apiKey;
+
+    //String apiKey = "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";
 
     public EmailResponse sendEmail(SendEmailRequest request) {
         EmailRequest emailRequest = EmailRequest.builder()
