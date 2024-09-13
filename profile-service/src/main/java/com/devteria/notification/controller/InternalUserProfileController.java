@@ -1,8 +1,7 @@
 package com.devteria.notification.controller;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import com.devteria.notification.dto.ApiResponse;
+import org.springframework.web.bind.annotation.*;
 
 import com.devteria.notification.dto.request.ProfileCreationRequest;
 import com.devteria.notification.dto.response.UserProfileResponse;
@@ -21,5 +20,12 @@ public class InternalUserProfileController {
     @PostMapping("/internal/users")
     UserProfileResponse createProfile(@RequestBody ProfileCreationRequest request) {
         return userProfileService.createProfile(request);
+    }
+
+    @GetMapping("/internal/users/{userId}")
+    ApiResponse<UserProfileResponse> getProfile(@PathVariable String userId) {
+        return ApiResponse.<UserProfileResponse>builder()
+                .result(userProfileService.getByUserId(userId))
+                .build();
     }
 }
