@@ -1,0 +1,25 @@
+package com.devteria.notification.controller;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.devteria.notification.dto.request.ProfileCreationRequest;
+import com.devteria.notification.dto.response.UserProfileResponse;
+import com.devteria.notification.service.UserProfileService;
+
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
+
+@RestController
+@RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+public class InternalUserProfileController {
+    UserProfileService userProfileService;
+
+    @PostMapping("/internal/users")
+    UserProfileResponse createProfile(@RequestBody ProfileCreationRequest request) {
+        return userProfileService.createProfile(request);
+    }
+}
