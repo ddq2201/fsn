@@ -29,8 +29,6 @@ public class EmailService {
     @NonFinal
     String apiKey;
 
-    //String apiKey = "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";
-
     public EmailResponse sendEmail(SendEmailRequest request) {
         EmailRequest emailRequest = EmailRequest.builder()
                 .sender(Sender.builder()
