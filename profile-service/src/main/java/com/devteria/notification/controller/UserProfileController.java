@@ -2,10 +2,10 @@ package com.devteria.notification.controller;
 
 import java.util.List;
 
-import com.devteria.notification.dto.ApiResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.devteria.notification.dto.ApiResponse;
 import com.devteria.notification.dto.response.UserProfileResponse;
 import com.devteria.notification.service.UserProfileService;
 
